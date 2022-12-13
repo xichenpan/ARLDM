@@ -1,0 +1,57 @@
+mode: train  # train sample
+gpu_ids: [2]
+batch_size: 2
+num_workers: 4
+num_cpu_cores: -1
+seed: 0
+ckpt_dir:
+
+auto_regression: True
+dataset: flintstones  # pororo flintstones vistsis vistdiit
+task: continuation  # continuation visualization
+# train
+init_lr: 1e-5
+warmup_epochs: 
+max_epochs: 50
+train_model_file:
+freeze_blip: False
+freeze_clip_text: False
+freeze_resnet: False
+
+# sample
+test_model_file:
+scheduler: ddim  # ddim pndm
+num_inference_steps: 50
+
+pororo:
+  data_dir: /test/xcpan/pororo_png
+  max_length: 85
+  new_tokens: ["pororo", "loopy", "eddy", "harry", "poby", "tongtong", "crong", "rody", "petty"]
+  clip_embedding_tokens: 49416
+  blip_embedding_tokens: 30530
+
+flintstones:
+  data_dir: /test/xcpan/flintstones_data
+  max_length: 91
+  new_tokens: ["fred", "barney", "wilma", "betty", "pebbles", "dino", "slate"]
+  clip_embedding_tokens: 49412
+  blip_embedding_tokens: 30525
+
+vistsis:
+  data_dir: /test/xcpan/flintstones_data
+  max_length: 100
+  clip_embedding_tokens: 49408
+  blip_embedding_tokens: 30524
+
+vistdii:
+  data_dir: /test/xcpan/flintstones_data
+  max_length: 65
+  clip_embedding_tokens: 49408
+  blip_embedding_tokens: 30524
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+hydra/job_logging: disabled
+hydra/hydra_logging: disabled

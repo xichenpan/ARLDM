@@ -1,0 +1,9 @@
+pytorch_lightning<1.7.0
+lightning-bolts
+transformers==4.24.0
+diffusers==0.7.2
+timm
+ftfy
+hydra-core
+opencv-python
+h5py
