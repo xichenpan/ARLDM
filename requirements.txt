@@ -7,3 +7,4 @@ ftfy
 hydra-core
 opencv-python
 h5py
+scipy

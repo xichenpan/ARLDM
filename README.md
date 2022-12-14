@@ -1,5 +1,6 @@
 # Synthesizing Coherent Story with Auto-Regressive Latent Diffusion Models
-Our code is implemented based on an internal toolkit of Alibaba Group. We provide the core code regarding algorithms here. We plan to pack it using Pytorch Lightning and release the full training and inference code soon within 1-2 weeks.
+
+This version is immigrated from a internal implementation of Alibaba Group, feel free to open an issue to address any problem!
 
 ## Environment
 ```shell
@@ -17,9 +18,38 @@ pip install -r requirements.txt
 * Download the VIST-DII url links [here](https://visionandlanguage.net/VIST/json_files/description-in-isolation/DII-with-labels.tar.gz)
 * Download the VIST images running
 ```shell
-python data_script/vist_img_download.py --json_path /path/to/dii_json_files --img_path /path/to/save/images --num_process 32
+python data_script/vist_img_download.py
+--json_dir /path/to/dii_json_files
+--img_dir /path/to/save_images
+--num_process 32
 ```
+* To accelerate I/O, using the following scrips to convert your downloaded data to HDF5
+```shell
+python data_script/pororo_hdf5.py
+--data_dir /path/to/pororo_data
+--save_path /path/to/save_hdf5_file
 
+python data_script/flintstones_hdf5.py
+--data_dir /path/to/flintstones_data
+--save_path /path/to/save_hdf5_file
+
+python data_script/vist_hdf5.py
+--sis_json_dir /path/to/sis_json_files
+--dii_json_dir /path/to/dii_json_files
+--img_dir /path/to/vist_images
+--save_path /path/to/save_hdf5_file
+ ```
+
+## Training
+Specify your directory and device configuration in `config.yaml` and run
+```shell
+python main.py
+```
+## Sample
+Specify your directory and device configuration in `config.yaml` and run
+```shell
+python main.py
+```
 ## Citation
 If you find this code useful for your research, please cite our paper:
 ```bibtex

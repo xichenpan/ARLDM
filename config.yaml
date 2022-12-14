@@ -1,50 +1,56 @@
+# device
 mode: train  # train sample
-gpu_ids: [2]
-batch_size: 2
-num_workers: 4
-num_cpu_cores: -1
-seed: 0
-ckpt_dir:
+gpu_ids: [ 0, 1, 2, 3 ]  # gpu ids
+batch_size: 1  # batch size each item denotes one story
+num_workers: 4  # number of workers
+num_cpu_cores: -1  # number of cpu cores
+seed: 0  # random seed
+ckpt_dir: /path/to/save_ckpt # checkpoint directory
+run_name: your_run_name # name for this run
 
-auto_regression: True
-dataset: flintstones  # pororo flintstones vistsis vistdiit
+# task
+dataset: pororo  # pororo flintstones vistsis vistdii
 task: continuation  # continuation visualization
+
 # train
-init_lr: 1e-5
-warmup_epochs: 
-max_epochs: 50
-train_model_file:
-freeze_blip: False
-freeze_clip_text: False
-freeze_resnet: False
+init_lr: 1e-5  # initial learning rate
+warmup_epochs: 1  # warmup epochs
+max_epochs: 50  # max epochs
+train_model_file:  # model file for resume, none for train from scratch
+freeze_clip: False  # whether to freeze clip
+freeze_blip: False  # whether to freeze blip
+freeze_resnet: False  # whether to freeze resnet
 
 # sample
-test_model_file:
+test_model_file:  # model file for test
+calculate_fid: True  # whether to calculate FID scores
 scheduler: ddim  # ddim pndm
-num_inference_steps: 50
+guidance_scale: 6  # guidance scale
+num_inference_steps: 250  # number of inference steps
+sample_output_dir: /path/to/save_samples # output directory
 
 pororo:
-  data_dir: /test/xcpan/pororo_png
+  hdf5_file: /path/to/pororo.h5
   max_length: 85
-  new_tokens: ["pororo", "loopy", "eddy", "harry", "poby", "tongtong", "crong", "rody", "petty"]
+  new_tokens: [ "pororo", "loopy", "eddy", "harry", "poby", "tongtong", "crong", "rody", "petty" ]
   clip_embedding_tokens: 49416
   blip_embedding_tokens: 30530
 
 flintstones:
-  data_dir: /test/xcpan/flintstones_data
+  hdf5_file: /path/to/flintstones.h5
   max_length: 91
-  new_tokens: ["fred", "barney", "wilma", "betty", "pebbles", "dino", "slate"]
+  new_tokens: [ "fred", "barney", "wilma", "betty", "pebbles", "dino", "slate" ]
   clip_embedding_tokens: 49412
   blip_embedding_tokens: 30525
 
 vistsis:
-  data_dir: /test/xcpan/flintstones_data
+  hdf5_file: /path/to/vist.h5
   max_length: 100
   clip_embedding_tokens: 49408
   blip_embedding_tokens: 30524
 
 vistdii:
-  data_dir: /test/xcpan/flintstones_data
+  hdf5_file: /path/to/vist.h5
   max_length: 65
   clip_embedding_tokens: 49408
   blip_embedding_tokens: 30524
