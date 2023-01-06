@@ -1,5 +1,7 @@
 # Synthesizing Coherent Story with Auto-Regressive Latent Diffusion Models
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/synthesizing-coherent-story-with-auto/story-visualization-on-pororo)](https://paperswithcode.com/sota/story-visualization-on-pororo?p=synthesizing-coherent-story-with-auto) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/synthesizing-coherent-story-with-auto/story-continuation-on-pororosv)](https://paperswithcode.com/sota/story-continuation-on-pororosv?p=synthesizing-coherent-story-with-auto) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/synthesizing-coherent-story-with-auto/story-continuation-on-flintstonessv)](https://paperswithcode.com/sota/story-continuation-on-flintstonessv?p=synthesizing-coherent-story-with-auto) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/synthesizing-coherent-story-with-auto/story-continuation-on-vist)](https://paperswithcode.com/sota/story-continuation-on-vist?p=synthesizing-coherent-story-with-auto)
+
 This version is immigrated from a internal implementation of Alibaba Group, feel free to open an issue to address any problem!
 
 ## Environment
