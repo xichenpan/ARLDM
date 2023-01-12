@@ -400,7 +400,7 @@ def train(args: DictConfig) -> None:
     checkpoint_callback = ModelCheckpoint(
         dirpath=os.path.join(args.ckpt_dir, args.run_name),
         save_top_k=0,
-        save_last=False
+        save_last=True
     )
 
     lr_monitor = LearningRateMonitor(logging_interval='step')
