@@ -56,7 +56,7 @@ python main.py
 ```
 
 ## Acknowledgment
-Thanks a lot to @adymaharana for kindly sharing FlintstonesSV and PororoSV datasets (and the code), as well as the PororoSV pretrained checkpoint and Flintstones sampled results.
+Thanks a lot to [@adymaharana](https://github.com/adymaharana) for kindly sharing FlintstonesSV and PororoSV datasets (and the code), as well as the PororoSV pretrained checkpoint and Flintstones sampled results of [StoryDALL·E](https://github.com/adymaharana/storydalle).
 
 ## Citation
 If you find this code useful for your research, please cite our paper:
