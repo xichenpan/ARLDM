@@ -54,6 +54,10 @@ Specify your directory and device configuration in `config.yaml` and run
 ```shell
 python main.py
 ```
+
+## Acknowledgment
+Thanks a lot to @adymaharana for kindly sharing FlintstonesSV and PororoSV datasets (and the code), as well as the PororoSV pretrained checkpoint and Flintstones sampled results.
+
 ## Citation
 If you find this code useful for your research, please cite our paper:
 ```bibtex
