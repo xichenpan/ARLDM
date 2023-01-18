@@ -450,7 +450,7 @@ def sample(args: DictConfig) -> None:
         print('FID: {}'.format(fid))
 
 
-@hydra.main(config_path=".", config_name="test")
+@hydra.main(config_path=".", config_name="config")
 def main(args: DictConfig) -> None:
     pl.seed_everything(args.seed)
     if args.num_cpu_cores > 0:
