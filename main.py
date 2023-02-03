@@ -89,7 +89,7 @@ class ARLDM(pl.LightningModule):
             else:
                 raise ValueError("Scheduler not supported")
             self.fid_augment = transforms.Compose([
-                transforms.Resize(64),
+                transforms.Resize([64, 64]),
                 transforms.ToTensor(),
                 transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
             ])
@@ -99,7 +99,7 @@ class ARLDM(pl.LightningModule):
         self.clip_tokenizer = CLIPTokenizer.from_pretrained('runwayml/stable-diffusion-v1-5', subfolder="tokenizer")
         self.blip_tokenizer = init_tokenizer()
         self.blip_image_processor = transforms.Compose([
-            transforms.Resize(224),
+            transforms.Resize([224, 224]),
             transforms.ToTensor(),
             transforms.Normalize([0.48145466, 0.4578275, 0.40821073], [0.26862954, 0.26130258, 0.27577711])
         ])
