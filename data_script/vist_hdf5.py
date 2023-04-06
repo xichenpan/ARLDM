@@ -48,9 +48,9 @@ def main(args):
         for i in deletables:
             del whole_album[p][i]
 
-    train_data = json.load(open(os.path.join(args.sis_json_dir, 'train.description-in-isolation.json')))
-    val_data = json.load(open(os.path.join(args.sis_json_dir, 'val.description-in-isolation.json')))
-    test_data = json.load(open(os.path.join(args.sis_json_dir, 'test.description-in-isolation.json')))
+    train_data = json.load(open(os.path.join(args.dii_json_dir, 'train.description-in-isolation.json')))
+    val_data = json.load(open(os.path.join(args.dii_json_dir, 'val.description-in-isolation.json')))
+    test_data = json.load(open(os.path.join(args.dii_json_dir, 'test.description-in-isolation.json')))
 
     flickr_id2text = {}
     for i, data in enumerate([train_data, val_data, test_data]):
