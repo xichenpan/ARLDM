@@ -64,7 +64,7 @@ class StoryDataset(Dataset):
         images = images[1:] if self.args.task == 'continuation' else images
         images = [self.augment(im) for im in images]
         images = torch.stack(images) if self.subset in ['train', 'val'] \
-            else torch.from_numpy(np.array([np.array(im) for im in images])).permute(0, 3, 1, 2)
+            else torch.from_numpy(np.array([np.array(im) for im in images]))
 
         texts = self.h5['sis'][index].decode('utf-8').split('|')
 
