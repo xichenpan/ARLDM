@@ -35,7 +35,7 @@ def main(args):
             except:
                 dii.append({image['id']: image['url_m']})
 
-    dii = [image for image in dii if not os.path.exists('{}/{}.jpg'.format(args.save_dir, list(image)[0]))]
+    dii = [image for image in dii if not os.path.exists('{}/{}.jpg'.format(args.img_dir, list(image)[0]))]
     print('total images: {}'.format(len(dii)))
 
     def splitlist(inlist, chunksize):
@@ -44,7 +44,7 @@ def main(args):
     dii_splitted = splitlist(dii, int((len(dii) / args.num_process)))
     process_list = []
     for dii_sub_list in dii_splitted:
-        p = Process(target=download_subprocess, args=(dii_sub_list,))
+        p = Process(target=download_subprocess, args=(dii_sub_list,args.img_dir))
         process_list.append(p)
         p.Daemon = True
         p.start()
